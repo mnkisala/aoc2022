@@ -3,8 +3,8 @@ use std::collections::HashSet;
 fn main() {
     let mut hx: i32 = 0;
     let mut hy: i32 = 0;
-
-    let mut knots = [(0, 0); 10];
+    let mut tx: i32 = 0;
+    let mut ty: i32 = 0;
 
     let mut visited_by_tail: HashSet<(i32, i32)> = HashSet::new();
 
@@ -25,18 +25,12 @@ fn main() {
             hx += dx;
             hy += dy;
 
-            /*
-                       for (back, front) in todo!() {
-
-                       }
-
-                       if (tx - hx).abs() == 2 || (ty - hy).abs() == 2 {
-                           tx = hx - dx;
-                           ty = hy - dy;
-                           visited_by_tail.insert((tx, ty));
-                       }
-                       visited_by_tail.insert((tx, ty));
-            */
+            if (tx - hx).abs() == 2 || (ty - hy).abs() == 2 {
+                tx = hx - dx;
+                ty = hy - dy;
+                visited_by_tail.insert((tx, ty));
+            }
+            visited_by_tail.insert((tx, ty));
         }
     }
 
