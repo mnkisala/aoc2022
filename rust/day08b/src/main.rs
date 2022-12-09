@@ -11,9 +11,9 @@ fn main() {
     let width = map[0].len();
     let height = map.len();
 
-    let max_score: usize = (1..height - 1)
+    let max_score: usize = (0..height)
         .map(|y| {
-            (1..width - 1)
+            (0..width)
                 .map(|x| {
                     // left
                     let mut score_left = 0;
